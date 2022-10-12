@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red155\green35\blue147;\red255\green255\blue255;\red0\green0\blue0;
+\red15\green104\blue160;\red28\green0\blue207;\red50\green109\blue116;}
+{\*\expandedcolortbl;;\csgenericrgb\c60759\c13753\c57628;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c0\c0\c0\c85000;
+\csgenericrgb\c5882\c40784\c62745;\csgenericrgb\c11000\c0\c81000;\csgenericrgb\c19418\c42935\c45455;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf2 \cb3 void
+\f1\b0 \cf4  \cf5 selectionSort\cf4  (
+\f0\b \cf2 int
+\f1\b0 \cf4  *A, 
+\f0\b \cf2 const
+\f1\b0 \cf4  
+\f0\b \cf2 int
+\f1\b0 \cf4 & size, 
+\f0\b \cf2 const
+\f1\b0 \cf4  
+\f0\b \cf2 int
+\f1\b0 \cf4 & startIndex)\
+\{\
+    
+\f0\b \cf2 if
+\f1\b0 \cf4  (size <= \cf6 1\cf4  || startIndex == size-\cf6 1\cf4 )\
+        
+\f0\b \cf2 return
+\f1\b0 \cf4 ;\
+    
+\f0\b \cf2 else
+\f1\b0 \cf4 \
+    \{\
+        
+\f0\b \cf2 int
+\f1\b0 \cf4  index = startIndex;\
+        
+\f0\b \cf2 for
+\f1\b0 \cf4 (
+\f0\b \cf2 int
+\f1\b0 \cf4  i = startIndex+\cf6 1\cf4 ; i < size; i++)\
+        \{\
+            
+\f0\b \cf2 if
+\f1\b0 \cf4 (A[i] < A[index])\
+                index = i;\
+        \}\
+        
+\f0\b \cf2 int
+\f1\b0 \cf4  temp = A[index];\
+        A[index] = A[startIndex];\
+        A[startIndex] = temp;\
+        \cf7 selectionSort\cf4 (A, size, startIndex+\cf6 1\cf4 );\
+    \}\
+\}}
